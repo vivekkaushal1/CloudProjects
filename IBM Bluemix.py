@@ -15,7 +15,7 @@ except ImportError:
 PORT = int(os.getenv('VCAP_APP_PORT', 8003))
 os.chdir('/your local directory to upload file/')
 
-def task1():
+def mainFunc():
     #Bluemix Credentials
     auth_url = '' + '/v3'
     project_name = ''
@@ -113,7 +113,7 @@ def task1():
 httpd = Server(("", PORT), Handler)
 try:
   print("Start serving at port %i" % PORT)
-  task1()
+  mainFunc()
   httpd.serve_forever()
 except:
   print ''
